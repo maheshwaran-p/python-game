@@ -1,0 +1,45 @@
+#importing random module
+import random
+
+#Creating a description function.
+def descri():
+    print("Let's play a guessing game, the computer will generate a number from 1-9, if you guessed right you win, else you lose.\nTo exit the game type exit\n")
+
+#Calling the function.
+descri()
+
+   
+userGuess=(input("Enter Your guess:"))
+print('{}'.format(userGuess))
+
+'''a while loop to check if the user want to play '''
+
+#setting the counter to zero of the times the user played.
+countplaytimes=0
+
+#if the user don't 'want to play the program exit.
+while userGuess=='exit':
+    print('Exiting the game...')
+    break
+else:
+# if yes the program start counting the times the user played.
+    countplaytimes+=1
+
+#The range of gussing in the game is 1 from 1-9.
+    for numOfGuessing in range(1):
+        x = random.randint(1,9)
+    
+#if statements to compare the inputs to the random numbers.
+    if (int(userGuess)==x):
+        print("You Win!")
+        
+    elif (int(userGuess)<x):
+        print("Guess Higher!")
+        
+    elif (int(userGuess)>x):
+        print("Guess Lower!")
+
+#printing out the times the user played.
+    print("You played {} times".format(countplaytimes ))
+
+
